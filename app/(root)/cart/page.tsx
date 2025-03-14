@@ -11,6 +11,7 @@ const Cart = () => {
   const router = useRouter();
   const { user } = useUser();
   const cart = useCart();
+  console.log(' cart:', cart);
 
   const total = cart.cartItems.reduce(
     (acc, cartItem) => acc + cartItem.item.price * cartItem.quantity,
@@ -62,7 +63,7 @@ const Cart = () => {
                     className="rounded-lg w-32 h-32 object-cover"
                     alt="product"
                   />
-                  <div className="flex flex-col gap-3 ml-4">
+                  <div className="flex flex-col gap-3 ml-4 sm:min-w-[400px]">
                     <p className="text-body-bold">{cartItem.item.title}</p>
                     {cartItem.color && (
                       <p className="text-small-medium">{cartItem.color}</p>
